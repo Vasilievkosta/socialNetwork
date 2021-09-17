@@ -1,0 +1,29 @@
+.nav {
+	grid-area: n;
+	border: 1px solid red;
+	background-color: #00fffa;
+}
+
+.list {
+	list-style-type: none;
+}
+
+.img {
+	width: 70px;
+    border: 2px solid #fff;
+	margin: 10px;
+	border-radius: 50%;
+}
+
+.link {
+	text-decoration: none;
+}
+
+.link:hover {
+	text-decoration: underline;
+}
+
+.activeLink {
+	color: red;
+	text-decoration: underline;
+}

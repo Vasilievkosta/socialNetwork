@@ -1,0 +1,23 @@
+.content {
+    border: 1px solid green;
+    border-radius: 3px;
+}
+
+.img {
+    border: 1px solid #fff;
+	margin: 10px;
+	border-radius: 50%;
+}
+
+.text {
+    text-decoration: none;
+    color: white;
+    margin-bottom: 10px;
+    display: inline-block;
+    font-size: 1.5em;
+}
+
+
+/* .link:hover {
+    text-decoration: underline;
+} */

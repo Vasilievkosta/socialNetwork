@@ -1,0 +1,38 @@
+.content {
+	background-color: lightblue;
+	padding: 10px;
+	border-radius: 10px;
+	display: grid;
+	grid-template-columns: 3fr 5fr;
+	grid-gap: 10px;
+}
+
+.dialogs {	
+	background: #f2f2f2;
+	border: 2px solid pink;
+}
+
+.dialogs__item {
+	/* border: 1px solid grey; */
+}
+
+.link {
+	text-decoration: none;
+}
+
+.activeLink {
+	color: gold;
+}
+
+.messages {
+	background: #f2f2f2;
+	border: 2px solid pink;
+}
+
+.messages__btn {
+	display: block;
+}
+
+.messages__item {
+	/* border: 1px solid grey; */
+}
