@@ -6,7 +6,7 @@ import React from 'react';
 import Header from './components/Header/Header';
 import Navbar from './components/Navbar/Navbar';
 import Profile from './components/Profile/Profile';
-import Dialogs from './components/Dialogs/Dialogs';
+import DialogsContainer from './components/Dialogs/DialogsContainer';
 import New from './components/New/New';
 import Music from './components/Music/Music';
 import Setting from './components/Setting/Setting';
@@ -23,7 +23,7 @@ const App = (props) => {
 				<div className = 'app-content' >
 				{/* <Route path='/profile' component={Profile} /> можно так, через component*/}
 					<Route path='/profile' render={() => <Profile posts={props.state} dispatch={props.dispatch} />} />
-					<Route path='/dialogs' render={() => <Dialogs state={props.state} dispatch={props.dispatch} />} />
+					<Route path='/dialogs' render={() => <DialogsContainer state={props.state} dispatch={props.dispatch} />} />
 					<Route path='/new' render={() => <New />} />
 					<Route path='/music' render={() => <Music />} />
 					<Route path='/setting' render={() => <Setting />} />
