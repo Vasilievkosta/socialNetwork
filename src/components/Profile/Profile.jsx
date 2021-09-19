@@ -13,8 +13,8 @@ const Profile = (props) => {
 			
 			<ProfileInfo />
 			
-			<MyPostContainer posts = {props.posts}
-					dispatch = {props.dispatch}					
+			<MyPostContainer posts = {props.state}
+					dispatch = {props.dispatch}						
 			/>
 			
 		</div>

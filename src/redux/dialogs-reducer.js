@@ -21,23 +21,24 @@ let initialState = {
 	]
 };
 
-const dialogsReducer = (state = initialState, action) => {
-	switch (action.type) {
-		case UPDATE_NEW_MESS:
-			state.newMessText = action.newText;
-			return state;		
-		
+const dialogsReducer = (state = initialState, action) => {	
+	switch (action.type) {			
 		case ADD_MESS:
-			let newMess = {
-				id: 7,
-				message: state.newMessText,
-			};
-				
-			state.messages.push(newMess);		
-			state.newMessText = '';
-			return state;
+			let newMessText = state.newMessText;
+			return {
+				...state,
+				newMessText: '',
+				messages: [...state.messages, {id: 7, message: newMessText}]
+			};			
 			
-		default: return state;
+		case UPDATE_NEW_MESS: 
+			return {
+				...state,
+				newMessText: action.newText
+			};
+			
+		default:
+			return state;
 	}
 }
 export const addMessActionCreator = () => {

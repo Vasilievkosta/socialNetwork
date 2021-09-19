@@ -1,8 +1,6 @@
 import './App.css';
 import React from 'react';
 
-
-
 import Header from './components/Header/Header';
 import Navbar from './components/Navbar/Navbar';
 import Profile from './components/Profile/Profile';
@@ -22,7 +20,7 @@ const App = (props) => {
 				<Navbar />
 				<div className = 'app-content' >
 				{/* <Route path='/profile' component={Profile} /> можно так, через component*/}
-					<Route path='/profile' render={() => <Profile posts={props.state} dispatch={props.dispatch} />} />
+					<Route path='/profile' render={() => <Profile state={props.state} dispatch={props.dispatch} />} />
 					<Route path='/dialogs' render={() => <DialogsContainer state={props.state} dispatch={props.dispatch} />} />
 					<Route path='/new' render={() => <New />} />
 					<Route path='/music' render={() => <Music />} />
