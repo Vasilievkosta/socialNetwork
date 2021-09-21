@@ -12,6 +12,7 @@ const Navbar = () => {
 				<li><NavLink className={s.link} activeClassName={s.activeLink} to="/New">New</NavLink></li>
 				<li><NavLink className={s.link} activeClassName={s.activeLink} to="/Music">Music</NavLink></li>
 				<li><NavLink className={s.link} activeClassName={s.activeLink} to="/Setting">Setting</NavLink></li>
+				<li><NavLink className={s.link} activeClassName={s.activeLink} to="/Users">Users</NavLink></li>
 			</ul>
 			
 			<img className={s.img} src={imageFriend} alt=""/>
