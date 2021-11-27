@@ -1,5 +1,6 @@
-// import React from 'react';
+import React from 'react';
 // import imageFriend from '../images/friend2.png';
+// import imageFriend_3 from '../images/friend3.png';
 
 const FOLLOW = 'FOLLOW';
 const UNFOLLOW = 'UNFOLLOW';
@@ -11,7 +12,7 @@ let initialState = {
 		// { id: 1, photoUrl: imageFriend, followed: false, fullName: 'Dmitry', status: 'I am a boss', location: { city: 'Minsk', country: 'Belarus' } },
 		// { id: 2, photoUrl: imageFriend, followed: true, fullName: 'Alex', status: 'I am a boss to', location: { city: 'Kyiv', country: 'Ukraine' } },
 		// { id: 3, photoUrl: imageFriend, followed: false, fullName: 'Sergio', status: 'I am a boss to', location: { city: 'Moscow', country: 'Russia' } },
-		// { id: 4, photoUrl: imageFriend, followed: false, fullName: 'Sergio', status: 'I am a boss to', location: { city: 'Moscow', country: 'Russia' } }
+		// { id: 4, photoUrl: imageFriend_3, followed: false, fullName: 'Sergio', status: 'I am a boss to', location: { city: 'Moscow', country: 'Russia' } }
 	]
 };
 
