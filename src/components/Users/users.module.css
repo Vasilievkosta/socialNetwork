@@ -5,3 +5,7 @@
 	border-radius: 10px;
 }
 
+.user__selected {
+	font-weight: 700;
+}
+

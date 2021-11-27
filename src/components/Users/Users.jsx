@@ -6,27 +6,38 @@ import imageFriend from '../../images/friend2.png';
 
 class Users extends React.Component {
 
-	constructor(props) {
-		super(props);
-		// getUsers = () => {
-		// 	if (this.props.users.length === 0) {
-		axios.get("https://social-network.samuraijs.com/api/1.0/users").then(response => {
+	componentDidMount() {
+		axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.pageSize}`).then(response => {
+			this.props.setUsers(response.data.items);
+			this.props.setTotalUsersCount(response.data.totalCount);
+		});
+	}
+
+	onPageChanged = (pageNumber) => {
+		this.props.setCurrentPage(pageNumber);
+		axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${pageNumber}&count=${this.props.pageSize}`).then(response => {
 			this.props.setUsers(response.data.items)
 		});
-
-		// props.setUsers([
-		// { id: 1, photoUrl: imageFriend, followed: false, fullName: 'Dmitry', status: 'I am a boss', location: { city: 'Minsk', country: 'Belarus' } },
-		// { id: 2, photoUrl: imageFriend, followed: true, fullName: 'Alex', status: 'I am a boss to', location: { city: 'Kyiv', country: 'Ukraine' } },
-		// { id: 3, photoUrl: imageFriend, followed: false, fullName: 'Sergio', status: 'I am a boss to', location: { city: 'Moscow', country: 'Russia' } }
-		// ]
-		// )
-		// }
 	}
 
 	render() {
+
+		let pagesCount = Math.ceil(this.props.totalUsersCount / this.props.pageSize);
+
+		let pages = [];
+		for (let i = 1; i <= pagesCount / 100; i++) {
+			pages.push(i);
+		}
 		return (
 			<div className={s.user__content}>
-				{/* <button onClick={this.getUsers}>Get Users</button> */}
+				<div>
+					{pages.map(p => {
+						return <span className={this.props.currentPage === p && s.user__selected}
+							onClick={(e) => { this.onPageChanged(p) }}>{p}</span>
+					})}
+
+
+				</div>
 				{
 					this.props.users.map(u => <div key={u.id}>
 						<div className={s.user__wrap}>
