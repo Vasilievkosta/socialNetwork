@@ -4,12 +4,12 @@ import { connect } from 'react-redux';
 
 import Users from './Users';
 
-import { followActionCreator } from '../../redux/users-reducer';
-import { unfollowActionCreator } from '../../redux/users-reducer';
-import { setUsersActionCreator } from '../../redux/users-reducer';
-import { setCurrentPageAC } from '../../redux/users-reducer';
-import { setUsersTotalCountAC } from '../../redux/users-reducer';
-import { toggleIsFetchingAC } from '../../redux/users-reducer';
+import { follow } from '../../redux/users-reducer';
+import { unfollow } from '../../redux/users-reducer';
+import { setUsers } from '../../redux/users-reducer';
+import { setCurrentPage } from '../../redux/users-reducer';
+import { setTotalUsersCount } from '../../redux/users-reducer';
+import { toggleIsFetching } from '../../redux/users-reducer';
 
 import Preloader from '../common/Preloader/Preloader';
 
@@ -61,27 +61,30 @@ let mapStateToProps = (state) => {
 	}
 }
 
-let mapDispatchToProps = (dispatch) => {
-	return {
-		follow: (userId) => {
-			dispatch(followActionCreator(userId));
-		},
-		unfollow: (userId) => {
-			dispatch(unfollowActionCreator(userId));
-		},
-		setUsers: (users) => {
-			dispatch(setUsersActionCreator(users));
-		},
-		setCurrentPage: (pageNumber) => {
-			dispatch(setCurrentPageAC(pageNumber));
-		},
-		setTotalUsersCount: (totalCount) => {
-			dispatch(setUsersTotalCountAC(totalCount));
-		},
-		toggleIsFetching: (isFetching) => {
-			dispatch(toggleIsFetchingAC(isFetching));
-		}
-	}
-}
+// let mapDispatchToProps = (dispatch) => {
+// 	return {
+// 		follow: (userId) => {
+// 			dispatch(followActionCreator(userId));
+// 		},
+// 		unfollow: (userId) => {
+// 			dispatch(unfollowActionCreator(userId));
+// 		},
+// 		setUsers: (users) => {
+// 			dispatch(setUsersActionCreator(users));
+// 		},
+// 		setCurrentPage: (pageNumber) => {
+// 			dispatch(setCurrentPageAC(pageNumber));
+// 		},
+// 		setTotalUsersCount: (totalCount) => {
+// 			dispatch(setUsersTotalCountAC(totalCount));
+// 		},
+// 		toggleIsFetching: (isFetching) => {
+// 			dispatch(toggleIsFetchingAC(isFetching));
+// 		}
+// 	}
+// }
 
-export default connect(mapStateToProps, mapDispatchToProps)(UsersContainer);
+// export default connect(mapStateToProps, mapDispatchToProps)(UsersContainer);
+export default connect(mapStateToProps, {
+	follow, unfollow, setUsers, setCurrentPage, setTotalUsersCount, toggleIsFetching
+})(UsersContainer);
