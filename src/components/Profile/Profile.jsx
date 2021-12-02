@@ -7,16 +7,16 @@ import MyPostContainer from './MyPost/MyPostContainer';
 
 
 const Profile = (props) => {
-	
-	return ( 
-		<div className = {s.content} >
-			
-			<ProfileInfo />
-			
-			<MyPostContainer posts = {props.state}
-					dispatch = {props.dispatch}						
+
+	return (
+		<div className={s.content} >
+
+			<ProfileInfo profile={props.profile} />
+
+			<MyPostContainer posts={props.state}
+				dispatch={props.dispatch}
 			/>
-			
+
 		</div>
 	);
 }

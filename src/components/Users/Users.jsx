@@ -4,8 +4,8 @@ import imageFriend from '../../images/friend2.png';
 
 let Users = (props) => {
 	let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize);
-	console.log(props.totalUsersCount);
-	console.log(props.pageSize);
+	// console.log(props.totalUsersCount);
+	// console.log(props.pageSize);
 
 	let pages = [];
 	for (let i = 1; i <= pagesCount / 100; i++) {
