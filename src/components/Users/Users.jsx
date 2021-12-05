@@ -1,6 +1,7 @@
 import React from 'react';
 import s from './users.module.css';
 import imageFriend from '../../images/friend2.png';
+import { NavLink } from 'react-router-dom';
 
 let Users = (props) => {
 	let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize);
@@ -8,7 +9,7 @@ let Users = (props) => {
 	// console.log(props.pageSize);
 
 	let pages = [];
-	for (let i = 1; i <= pagesCount / 100; i++) {
+	for (let i = 1; i <= pagesCount / 120; i++) {
 		pages.push(i);
 	}
 
@@ -26,7 +27,9 @@ let Users = (props) => {
 				props.users.map(u => <div key={u.id}>
 					<div className={s.user__wrap}>
 						<div className={s.user__add}>
-							<img className={s.img} src={u.photos.small != null ? u.photos.small : imageFriend} alt="" />
+							<NavLink to={'/profile/' + u.id}>
+								<img className={s.img} src={u.photos.small != null ? u.photos.small : imageFriend} alt="" />
+							</NavLink>
 
 							<div>
 								{u.followed

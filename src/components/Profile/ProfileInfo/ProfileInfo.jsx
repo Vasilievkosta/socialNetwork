@@ -25,8 +25,6 @@ const ProfileInfo = (props) => {
 			<button onClick={addMail}>Go</button>
 			<img src={props.profile.photos.small} />
 		</div>
-
-
 	);
 }
 
