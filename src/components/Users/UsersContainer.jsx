@@ -17,6 +17,7 @@ class UsersContainer extends React.Component {
 
 	componentDidMount() {
 		this.props.toggleIsFetching(true);
+		
 		axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.pageSize}`).then(response => {
 			this.props.toggleIsFetching(false);
 			this.props.setUsers(response.data.items);
@@ -62,26 +63,26 @@ let mapStateToProps = (state) => {
 }
 
 // let mapDispatchToProps = (dispatch) => {
-// 	return {
-// 		follow: (userId) => {
-// 			dispatch(followActionCreator(userId));
-// 		},
-// 		unfollow: (userId) => {
-// 			dispatch(unfollowActionCreator(userId));
-// 		},
-// 		setUsers: (users) => {
-// 			dispatch(setUsersActionCreator(users));
-// 		},
-// 		setCurrentPage: (pageNumber) => {
-// 			dispatch(setCurrentPageAC(pageNumber));
-// 		},
-// 		setTotalUsersCount: (totalCount) => {
-// 			dispatch(setUsersTotalCountAC(totalCount));
-// 		},
-// 		toggleIsFetching: (isFetching) => {
-// 			dispatch(toggleIsFetchingAC(isFetching));
-// 		}
-// 	}
+	// return {
+		// follow: (userId) => {
+			// dispatch(followActionCreator(userId));
+		// },
+		// unfollow: (userId) => {
+			// dispatch(unfollowActionCreator(userId));
+		// },
+		// setUsers: (users) => {
+			// dispatch(setUsersActionCreator(users));
+		// },
+		// setCurrentPage: (pageNumber) => {
+			// dispatch(setCurrentPageAC(pageNumber));
+		// },
+		// setTotalUsersCount: (totalCount) => {
+			// dispatch(setUsersTotalCountAC(totalCount));
+		// },
+		// toggleIsFetching: (isFetching) => {
+			// dispatch(toggleIsFetchingAC(isFetching));
+		// }
+	// }
 // }
 
 // export default connect(mapStateToProps, mapDispatchToProps)(UsersContainer);
